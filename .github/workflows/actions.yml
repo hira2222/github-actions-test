@@ -9,13 +9,24 @@ jobs:
             - name: list files
               run: |
                  pwd
-                 ls
+                 ls -q 
+            # by default the github won't copy your repository into your working directoty so create another action checkout
+
+            - name: checkout
+              uses: actions/checkout@v1
+
+            - name: list files after checkout
+              run: |
+                 pwd
+                 ls -a
+
             - name: js action
               id: greet
               uses: actions/hello-world-javascript-action@v1 
               #input
               with: 
                 who-to-greet: eman
-            #output    
+            #output 
+               
             - name: log greeting time
               run: echo "${{steps.greet.outputs.time}}"
