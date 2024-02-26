@@ -18,3 +18,12 @@ jobs:
           print(platform.processor()) 
 #prints the processor on which workflow is running
         shell: python
+  run-winndows-command:
+    runs-on: windows-latest
+    steps:
+      - name: directory powershell
+        run: get-location
+      - name: directory bash
+        run: pwd
+        shell: bash
+  
