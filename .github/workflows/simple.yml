@@ -15,5 +15,6 @@ jobs:
       - name: python commmand
         run: |
           import platform
-          print(platform.processor()) //prints the processor on which workflow is running
+          print(platform.processor()) 
+#prints the processor on which workflow is running
         shell: python
