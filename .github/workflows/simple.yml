@@ -20,8 +20,9 @@ jobs:
         shell: python
   run-winndows-command:
     runs-on: windows-latest
+    needs: ["run-shell-command"] # to run them in series not in parallel
     steps:
-      - name: directory powershell
+      - name: directory powershell # default for windows
         run: get-location
       - name: directory bash
         run: pwd
