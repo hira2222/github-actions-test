@@ -4,9 +4,9 @@ name: Actions Workflow
 # we can also pass it  as a object:
 on:
   schedule: 
-    - cron: "0/1 * * * *"
-    - cron: "0/2 * * * *" 
-    #twice every 2 minutes
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *" 
+    #twice every 6 minutes
   pull_request:
     types: [closed, assigned, opened, reopened]
 jobs:
