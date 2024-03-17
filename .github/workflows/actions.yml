@@ -1,6 +1,6 @@
 name: Actions Workflow
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
     run-github-actions:
@@ -17,7 +17,8 @@ jobs:
                 #  git clone git@github:$GITHUB_REPOSITORY
                 #  git checkout $GITHUB_SHA
             # by default the github won't copy your repository into your working directoty so create another action checkout
-            # checkout will run git fetch and git checkout  to your latest commit or on the commit that triggered the workflow to run 
+            # checkout will run git fetch and git checkout  to your latest commit or on the commit that triggered the workflow to run
+            # checking 
             - name: checkout
               uses: actions/checkout@v1
 
